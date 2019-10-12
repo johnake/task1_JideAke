@@ -8,7 +8,7 @@ variable "managed_by" {
 }
 
 variable "app_name" {
-  default     = "node-hello-world"
+  default     = "jydweatherapp"
   description = "Name of the application"
 }
 
@@ -28,7 +28,7 @@ variable "az_count" {
 }
 
 variable "repository_name" {
-  default     = "node-hello-world"
+  default     = "jyd-weather-app"
   description = "Name for Docker repo"
 }
 // SNS Variables

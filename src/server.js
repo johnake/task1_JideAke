@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const app = express()
 
-const apiKey = 'd759f5c23f95bf6c8ac762df900ff9';
+const apiKey = '31465f15ef45a9cb9ced9c161d5c5a99';
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,7 +25,8 @@ app.post('/', function (req, res) {
       if(weather.main == undefined){
         res.render('index', {weather: null, error: 'Error, please try again'});
       } else {
-        let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+        var tempInCelsius = (weather.main.temp - 32) * 5/9
+        let weatherText = `It's ${tempInCelsius} degrees in ${weather.name}!`;
         res.render('index', {weather: weatherText, error: null});
       }
     }
